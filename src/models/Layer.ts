@@ -1,7 +1,6 @@
 export interface Layer {
-  color: string;
   flavor: string;
+  design: string;
   height: number;
-  texture: string;
-  shape: string;
+  width: number;
 }

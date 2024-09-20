@@ -9,25 +9,22 @@ import { Layer } from "./models/Layer";
 function App() {
   const [layers, setLayers] = useState<Layer[]>([
     {
-      color: "pink",
       flavor: "strawberry",
+      design: "stars",
       height: 10,
-      texture: "cloud",
-      shape: "heart",
+      width: 10,
     },
     {
-      color: "pink",
-      flavor: "strawberry",
+      flavor: "ube",
+      design: "butterflies",
       height: 10,
-      texture: "cloud",
-      shape: "heart",
+      width: 10,
     },
     {
-      color: "pink",
-      flavor: "strawberry",
+      flavor: "blueberry",
+      design: "flowers",
       height: 10,
-      texture: "cloud",
-      shape: "heart",
+      width: 10,
     },
   ]);
 

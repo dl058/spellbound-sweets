@@ -2,3 +2,22 @@
   display: flex;
   justify-content: space-around;
 }
+
+body {
+  background: linear-gradient(#297bd8, #3f87a6, #7981d3);
+  font-family: "Happy Monkey", system-ui;
+  height: 100vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  color: #d3eff8;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #d3eff8;
+}

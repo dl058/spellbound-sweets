@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <h1>Cakes</h1>
+      <h1>Spellbound Sweets</h1>
       <main>
         <div className="Container">
           <Cake layers={layers} />

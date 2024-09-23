@@ -6,30 +6,11 @@ import { Layer } from "./models/Layer";
 
 function App() {
   // state goes here
-  const [layers, setLayers] = useState<Layer[]>([
-    {
-      flavor: "strawberry",
-      design: "stars",
-      height: 10,
-      width: 10,
-    },
-    {
-      flavor: "ube",
-      design: "butterflies",
-      height: 10,
-      width: 10,
-    },
-    {
-      flavor: "blueberry",
-      design: "flowers",
-      height: 10,
-      width: 10,
-    },
-  ]);
+  const [layers, setLayers] = useState<Layer[]>([]);
 
   const addLayer = (newLayer: Layer): void => {
     setLayers((prev) => {
-      return [...prev, newLayer];
+      return [newLayer, ...prev];
     });
   };
 
@@ -45,7 +26,7 @@ function App() {
     <>
       <h1>Cakes</h1>
       <main>
-        <div>
+        <div className="Container">
           <Cake layers={layers} />
           <CakeBuilder
             addLayer={addLayer}

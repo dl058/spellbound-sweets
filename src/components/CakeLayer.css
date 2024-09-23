@@ -1,0 +1,23 @@
+.CakeLayer {
+  background-position: center;
+  background-size: contain;
+  border-radius: 20px;
+}
+.CakeLayer.moonlight-vanilla {
+  background-color: beige;
+}
+.CakeLayer.chocolate-dragon-fire {
+  background-color: maroon;
+}
+
+.CakeLayer.stardust-strawberry {
+  background-color: palevioletred;
+}
+
+.CakeLayer.magical-marshmallow {
+  background-color: aquamarine;
+}
+
+.CakeLayer.fairy-berry {
+  background-color: purple;
+}

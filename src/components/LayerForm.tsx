@@ -8,8 +8,8 @@ interface Props {
 }
 
 const LayerForm = ({ onAddLayer, closeForm }: Props) => {
-  const [flavor, setFlavor] = useState("");
-  const [design, setDesign] = useState("");
+  const [flavor, setFlavor] = useState("moonlight-vanilla");
+  const [design, setDesign] = useState("rainbow-isles");
   const [height, setHeight] = useState("");
   const [width, setwidth] = useState("");
 
@@ -21,9 +21,10 @@ const LayerForm = ({ onAddLayer, closeForm }: Props) => {
       height: +height,
       width: +width,
     };
+    console.log(newLayer);
     onAddLayer(newLayer);
-    setFlavor("");
-    setDesign("");
+    setFlavor("moonlight-vanilla");
+    setDesign("rainbow-isles");
     setHeight("");
     setwidth("");
   };
@@ -31,24 +32,32 @@ const LayerForm = ({ onAddLayer, closeForm }: Props) => {
   return (
     <form className="LayerForm" onSubmit={submitHandler}>
       <label htmlFor="flavor"> Flavor: </label>
-      <input
-        type="text"
+      <select
         name="flavor"
         id="flavor"
         value={flavor}
         onChange={(e) => setFlavor(e.target.value)}
-        placeholder="Add flavor here"
         required
-      />
+      >
+        <option value="moonlight-vanilla">Moonlight Vanilla</option>
+        <option value="chocolate-dragon-fire">Chocolate Dragon Fire</option>
+        <option value="stardust-strawberry">Stardust Strawberry</option>
+        <option value="magical-marshmallow">Magical Marshmallow</option>
+        <option value="fairy-berry">Fairy Berry</option>
+      </select>
+
       <label htmlFor="design">Design:</label>
-      <input
-        type="text"
+      <select
         name="design"
         id="design"
         value={design}
         onChange={(e) => setDesign(e.target.value)}
-        placeholder="Add design here"
-      />
+      >
+        <option value="rainbow-isles">Rainbow Isles</option>
+        <option value="crystal-cave">Crystal Cave</option>
+        <option value="cloud-kingdom">Cloud Kingdom</option>
+        <option value="starry-night">Starry Night</option>
+      </select>
 
       <label htmlFor="height">Height:</label>
       <input
@@ -67,6 +76,7 @@ const LayerForm = ({ onAddLayer, closeForm }: Props) => {
         value={width}
         onChange={(e) => setwidth(e.target.value)}
       />
+      <button>Save</button>
     </form>
   );
 };

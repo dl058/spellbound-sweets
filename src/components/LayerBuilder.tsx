@@ -1,6 +1,5 @@
 import { Layer } from "../models/Layer";
 import "./LayerBuilder.css";
-import React from "react";
 
 interface Props {
   layer: Layer;
@@ -8,10 +7,11 @@ interface Props {
   deleteLayer: (index: number) => void;
 }
 
-const LayerBuilder = ({ layer, index, deleteLayer }: Props) => {
+const LayerBuilder = ({ index, deleteLayer }: Props) => {
   return (
     <div className="LayerBuilder">
       <button
+        className="deleteBtn"
         onClick={() => {
           deleteLayer(index);
         }}

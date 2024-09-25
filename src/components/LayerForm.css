@@ -1,7 +1,25 @@
-button {
-  background-color: rgb(35, 193, 204);
+.LayerForm {
+  background-color: #f1e0ff;
   padding: 10px, 20px;
   color: rgb(44, 42, 42);
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 20px;
+  border: 3px #9370db solid;
+  font-family: "Sacramento", cursive;
+}
+
+form.LayerForm {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.LayerForm .saveBtn {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  align-self: stretch;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  color: white;
+  font-size: 20px;
 }

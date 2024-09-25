@@ -1,8 +1,16 @@
 .Cake {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #f6d2d9;
+  width: 600px;
+  height: 600px;
+  border-radius: 20px;
+  margin-bottom: 60px;
 }
 img {
-  height: 500px;
-  width: 500px;
+  width: 300px;
+
+  z-index: 1;
 }

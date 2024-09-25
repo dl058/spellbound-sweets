@@ -4,10 +4,9 @@ import "./LayerForm.css";
 
 interface Props {
   onAddLayer: (layer: Layer) => void;
-  closeForm: () => void;
 }
 
-const LayerForm = ({ onAddLayer, closeForm }: Props) => {
+const LayerForm = ({ onAddLayer }: Props) => {
   const [flavor, setFlavor] = useState("moonlight-vanilla");
   const [design, setDesign] = useState("rainbow-isles");
   const [height, setHeight] = useState("");
@@ -61,22 +60,29 @@ const LayerForm = ({ onAddLayer, closeForm }: Props) => {
 
       <label htmlFor="height">Height:</label>
       <input
+        max={200}
+        min={10}
         type="number"
         name="height"
         id="height"
         value={height}
         onChange={(e) => setHeight(e.target.value)}
-        placeholder="Add height here"
+        placeholder="10-200"
+        required
       />
       <label htmlFor="width">Width:</label>
       <input
+        max={300}
+        min={20}
         type="number"
         name="width"
         id="width"
         value={width}
         onChange={(e) => setwidth(e.target.value)}
+        placeholder="20-300"
+        required
       />
-      <button>Save</button>
+      <button className="saveBtn">Save</button>
     </form>
   );
 };

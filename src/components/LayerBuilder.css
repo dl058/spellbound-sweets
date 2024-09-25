@@ -1,0 +1,10 @@
+.LayerBuilder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.LayerBuilder .deleteBtn {
+  border-radius: 5px;
+  padding-top: 5px;
+}

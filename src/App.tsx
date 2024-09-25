@@ -20,8 +20,6 @@ function App() {
     });
   };
 
-  // const layer
-
   return (
     <>
       <h1>Spellbound Sweets</h1>

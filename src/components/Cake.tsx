@@ -1,7 +1,7 @@
 import { Layer } from "../models/Layer";
 import "./Cake.css";
 import CakeLayer from "./CakeLayer";
-import CakePlatter from "../assets/cakepan.png";
+import CakePlatter from "../assets/cake-stand.png";
 interface Props {
   layers: Layer[];
 }

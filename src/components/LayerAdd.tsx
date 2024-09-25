@@ -12,12 +12,11 @@ const LayerAdd = ({ onAddLayer }: Props) => {
   return (
     <div className="LayerAdd">
       {showForm ? (
-        <LayerForm
-          onAddLayer={onAddLayer}
-          closeForm={() => setShowForm(false)}
-        />
+        <LayerForm onAddLayer={onAddLayer} />
       ) : (
-        <button onClick={() => setShowForm(true)}>Add Layer</button>
+        <button className="add-layer" onClick={() => setShowForm(true)}>
+          Add a Layer
+        </button>
       )}
     </div>
   );

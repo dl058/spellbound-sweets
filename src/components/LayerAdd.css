@@ -1,14 +1,18 @@
 .LayerAdd {
   background-color: #ffffffcc;
+  border-radius: 20px;
   height: 200px;
   width: 300px;
-  padding: 20px;
-  text-align: left;
-  font-size: 30px;
+  margin: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Playwrite PL", cursive;
+  color: #9370db;
 }
 
-/* .button {
-  background-color: aquamarine;
-  padding: 20px;
-  color: black;
-} */
+.LayerAdd .add-layer {
+  padding: 8px;
+  position: relative;
+  top: 5em;
+  border-radius: 10px;
+}

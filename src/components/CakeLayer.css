@@ -1,32 +1,292 @@
 .CakeLayer {
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   border-radius: 20px;
   position: relative;
-
   z-index: 2;
-  border: 1px solid #00000026;
+  border: 4px solid black;
+  background-repeat: no-repeat;
 }
-.CakeLayer .design {
+/* .CakeLayer .design {
   height: 100%;
   background-size: contain;
+  
+} */
+
+@keyframes fireFlicker {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5),
+      0 0 40px rgba(255, 180, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 80, 0, 0.9), 0 0 60px rgba(255, 120, 0, 0.7),
+      0 0 80px rgba(255, 200, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5),
+      0 0 40px rgba(255, 180, 0, 0.4);
+  }
 }
 
-.CakeLayer.moonlight-vanilla {
-  background-color: beige;
-}
 .CakeLayer.chocolate-dragon-fire {
-  background-color: maroon;
+  animation: fireFlicker 1s infinite ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 100, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5),
+    0 0 40px rgba(255, 180, 0, 0.4);
 }
 
-.CakeLayer.stardust-strawberry {
-  background-color: palevioletred;
+/* Sparkle animation keyframes */
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.CakeLayer.magical-marshmallow {
-  background-color: aquamarine;
+/* Sparkles for moonlightVanilla */
+.CakeLayer.moonlight-vanilla .sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 1s infinite ease-in-out;
 }
 
+/* Position some sparkles at different locations within the layer */
+.CakeLayer.moonlight-vanilla .sparkle1 {
+  top: 20%;
+  left: 40%;
+  animation-delay: 0.2s;
+}
+
+.CakeLayer.moonlight-vanilla .sparkle2 {
+  top: 50%;
+  left: 70%;
+  animation-delay: 0.4s;
+}
+
+.CakeLayer.moonlight-vanilla .sparkle3 {
+  top: 80%;
+  left: 20%;
+  animation-delay: 0.6s;
+}
+
+.CakeLayer.moonlight-vanilla .sparkle4 {
+  top: 40%;
+  left: 10%;
+  animation-delay: 0.8s;
+}
+
+/* Swirling effect keyframes */
+@keyframes swirl {
+  0% {
+    transform: rotate(0deg) translateX(30px);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) translateX(30px);
+    opacity: 0.2;
+  }
+}
+
+/* Sparkle twinkling effect */
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glittering Stardust */
+.CakeLayer.stardust-strawberry .sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(252, 102, 127);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 1s infinite ease-in-out;
+}
+
+.CakeLayer.stardust-strawberry .sparkle1 {
+  top: 20%;
+  left: 40%;
+  animation-delay: 0.2s;
+}
+
+.CakeLayer.stardust-strawberry .sparkle2 {
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.4s;
+}
+
+.CakeLayer.stardust-strawberry .sparkle3 {
+  top: 80%;
+  left: 30%;
+  animation-delay: 0.6s;
+}
+
+.CakeLayer.stardust-strawberry .sparkle4 {
+  top: 50%;
+  left: 20%;
+  animation-delay: 0.8s;
+}
+
+/* Swirling effect for particles */
+.CakeLayer.stardust-strawberry .swirl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #ff5dae;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: swirl 4s infinite ease-in-out;
+}
+
+.CakeLayer.stardust-strawberry .swirl1 {
+  animation-delay: 0s;
+  transform-origin: 0 0;
+}
+
+.CakeLayer.stardust-strawberry .swirl2 {
+  animation-delay: 1s;
+  transform-origin: 0 0;
+}
+
+.CakeLayer.stardust-strawberry .swirl3 {
+  animation-delay: 2s;
+  transform-origin: 0 0;
+}
+
+.CakeLayer.stardust-strawberry .swirl4 {
+  animation-delay: 3s;
+  transform-origin: 0 0;
+}
+
+/* Floating bubbles/berries for Fairy Berry */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* Soft glowing aura */
 .CakeLayer.fairy-berry {
-  background-color: purple;
+  animation: glow 3s infinite ease-in-out;
+  box-shadow: 0 0 15px 10px rgba(255, 182, 193, 0.5);
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px 10px rgba(255, 182, 193, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px 15px rgba(255, 105, 180, 0.7);
+  }
+}
+
+/* Floating berry-like circles */
+.CakeLayer.fairy-berry .berry {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border-radius: 50%;
+  animation: floatUp 5s infinite ease-in-out;
+  opacity: 0;
+}
+
+.CakeLayer.fairy-berry .berry1 {
+  top: 80%;
+  left: 30%;
+  animation-delay: 0.5s;
+  background-color: blueviolet;
+}
+
+.CakeLayer.fairy-berry .berry2 {
+  top: 60%;
+  left: 50%;
+  animation-delay: 1s;
+  background-color: blue;
+}
+
+.CakeLayer.fairy-berry .berry3 {
+  top: 40%;
+  left: 70%;
+  animation-delay: 1.5s;
+  background-color: rgb(255, 0, 98);
+}
+
+.CakeLayer.fairy-berry .berry4 {
+  top: 20%;
+  left: 40%;
+  animation-delay: 2s;
+  background-color: rgb(239, 128, 146);
+}
+
+/* Sparkles fluttering around */
+@keyframes sparkleFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(20px, -20px);
+    opacity: 0;
+  }
+}
+
+.CakeLayer.fairy-berry .sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  animation: sparkleFloat 3s infinite ease-in-out;
+}
+
+.CakeLayer.fairy-berry .sparkle1 {
+  top: 50%;
+  left: 20%;
+  animation-delay: 0.3s;
+}
+
+.CakeLayer.fairy-berry .sparkle2 {
+  top: 30%;
+  left: 60%;
+  animation-delay: 0.6s;
+}
+
+.CakeLayer.fairy-berry .sparkle3 {
+  top: 70%;
+  left: 40%;
+  animation-delay: 0.9s;
+}
+
+.CakeLayer.fairy-berry .sparkle4 {
+  top: 40%;
+  left: 80%;
+  animation-delay: 1.2s;
 }

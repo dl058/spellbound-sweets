@@ -7,16 +7,14 @@ interface Props {
   deleteLayer: (index: number) => void;
 }
 
-const LayerBuilder = ({ index, deleteLayer }: Props) => {
+const LayerBuilder = ({ layer, index, deleteLayer }: Props) => {
+  const handleDelete = () => {
+    deleteLayer(index);
+  };
   return (
     <div className="LayerBuilder">
-      <button
-        className="deleteBtn"
-        onClick={() => {
-          deleteLayer(index);
-        }}
-      >
-        Delete
+      <button className="deleteBtn" onClick={handleDelete}>
+        Delete {layer.flavor}
       </button>
     </div>
   );

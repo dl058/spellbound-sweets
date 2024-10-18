@@ -8,7 +8,7 @@ interface Props {
 
 const LayerForm = ({ onAddLayer }: Props) => {
   const [flavor, setFlavor] = useState("moonlight-vanilla");
-  const [design, setDesign] = useState("rainbow-isles");
+  // const [design, setDesign] = useState("rainbow-isles");
   const [height, setHeight] = useState("");
   const [width, setwidth] = useState("");
 
@@ -16,14 +16,14 @@ const LayerForm = ({ onAddLayer }: Props) => {
     e.preventDefault();
     const newLayer: Layer = {
       flavor: flavor,
-      design: design,
+      // design: design,
       height: +height,
       width: +width,
     };
     console.log(newLayer);
     onAddLayer(newLayer);
     setFlavor("moonlight-vanilla");
-    setDesign("rainbow-isles");
+    // setDesign("rainbow-isles");
     setHeight("");
     setwidth("");
   };
@@ -45,18 +45,18 @@ const LayerForm = ({ onAddLayer }: Props) => {
         <option value="fairy-berry">Fairy Berry</option>
       </select>
 
-      <label htmlFor="design">Design:</label>
-      <select
+      {/* <label htmlFor="design">Design:</label> */}
+      {/* <select
         name="design"
         id="design"
         value={design}
         onChange={(e) => setDesign(e.target.value)}
-      >
-        <option value="rainbow-isles">Rainbow Isles</option>
+      > */}
+      {/* <option value="rainbow-isles">Rainbow Isles</option>
         <option value="crystal-cave">Crystal Cave</option>
         <option value="cloud-kingdom">Cloud Kingdom</option>
         <option value="starry-night">Starry Night</option>
-      </select>
+      </select> */}
 
       <label htmlFor="height">Height:</label>
       <input

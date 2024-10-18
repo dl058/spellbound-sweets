@@ -4,8 +4,9 @@
   color: rgb(44, 42, 42);
   border-radius: 10px;
   font-size: 20px;
-  border: 3px #9370db solid;
+  border: 3px black solid;
   font-family: "Sacramento", cursive;
+  font-weight: 600;
 }
 
 form.LayerForm {

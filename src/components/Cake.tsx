@@ -11,7 +11,7 @@ const Cake = ({ layers }: Props) => {
       {layers.map((layer) => {
         return <CakeLayer layer={layer} />;
       })}
-      <img src={CakePlatter} alt="cake platter" />
+      <img src={CakePlatter} alt="cake platter" className="cake-platter" />
     </div>
   );
 };

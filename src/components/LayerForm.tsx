@@ -9,8 +9,8 @@ interface Props {
 const LayerForm = ({ onAddLayer }: Props) => {
   const [flavor, setFlavor] = useState("moonlight-vanilla");
   // const [design, setDesign] = useState("rainbow-isles");
-  const [height, setHeight] = useState("");
-  const [width, setwidth] = useState("");
+  const [height, setHeight] = useState(50);
+  const [width, setWidth] = useState(50);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
@@ -24,8 +24,17 @@ const LayerForm = ({ onAddLayer }: Props) => {
     onAddLayer(newLayer);
     setFlavor("moonlight-vanilla");
     // setDesign("rainbow-isles");
-    setHeight("");
-    setwidth("");
+    setHeight(50);
+    setWidth(50);
+  };
+
+  const cakeStyles = {
+    backgroundColor: getFlavorColor(flavor),
+    height: `${height}px`,
+    width: `${width}px`,
+    borderRadius: "10px",
+    border: "1px solid black",
+    margin: "20px auto",
   };
 
   return (
@@ -41,7 +50,7 @@ const LayerForm = ({ onAddLayer }: Props) => {
         <option value="moonlight-vanilla">Moonlight Vanilla</option>
         <option value="chocolate-dragon-fire">Chocolate Dragon Fire</option>
         <option value="stardust-strawberry">Stardust Strawberry</option>
-        <option value="magical-marshmallow">Magical Marshmallow</option>
+
         <option value="fairy-berry">Fairy Berry</option>
       </select>
 
@@ -61,30 +70,45 @@ const LayerForm = ({ onAddLayer }: Props) => {
       <label htmlFor="height">Height:</label>
       <input
         max={200}
-        min={10}
-        type="number"
+        min={50}
+        type="range"
         name="height"
         id="height"
         value={height}
-        onChange={(e) => setHeight(e.target.value)}
-        placeholder="10-200"
+        onChange={(e) => setHeight(Number(e.target.value))}
         required
       />
       <label htmlFor="width">Width:</label>
       <input
-        max={300}
-        min={20}
-        type="number"
+        type="range"
         name="width"
         id="width"
+        min={50}
+        max={230}
         value={width}
-        onChange={(e) => setwidth(e.target.value)}
-        placeholder="20-300"
+        onChange={(e) => setWidth(Number(e.target.value))}
         required
       />
+      <div style={cakeStyles} className="cake-render">
+        cake size!
+      </div>
       <button className="saveBtn">Save</button>
     </form>
   );
+};
+const getFlavorColor = (flavor: string) => {
+  switch (flavor) {
+    case "moonlight-vanilla":
+      return "#f3e5ab"; // Vanilla color
+    case "chocolate-dragon-fire":
+      return "#8b4513"; // Chocolate color
+    case "stardust-strawberry":
+      return "#ff6384"; // Strawberry pink
+    case "fairy-berry":
+      return "#8e44ad"; // Berry purple
+    default:
+      return "#ffffff"; // Default to white
+  }
 };
 
 export default LayerForm;

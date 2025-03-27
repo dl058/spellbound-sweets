@@ -7,19 +7,20 @@ body {
   background-color: #fff5ee;
   font-family: "Sacramento", cursive;
   height: 100vh;
+  color: #8c60e8;
 }
 
 h1 {
   display: flex;
   justify-content: center;
   font-size: 5rem;
-  color: #9370db;
+  color: #8c60e8;
   letter-spacing: 3px;
 }
 
 h2 {
   font-size: 2.5rem;
-  color: #9370db;
+  color: #8c60e8;
   text-align: center;
 }
 button {
@@ -27,4 +28,19 @@ button {
   border: 0;
   color: white;
   font-family: inherit;
+}
+
+@media only screen and (max-width: 480px) {
+  .Container {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 7px;
+  }
 }

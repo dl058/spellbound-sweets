@@ -1,44 +1,32 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import Instructions from "./components/Instructions";
 import Cake from "./components/Cake";
 import CakeBuilder from "./components/CakeBuilder";
 import { Layer } from "./models/Layer";
-import Instructions from "./components/Instructions";
 
 function App() {
-  // state goes here
   const [layers, setLayers] = useState<Layer[]>([]);
-  const [openInstructions, setOpenInstructions] = useState<boolean>(false);
+  const [openInstructions, setOpenInstructions] = useState(false);
 
   useEffect(() => {
-    setOpenInstructions(true);
+    setOpenInstructions(true); // Always show on every load
   }, []);
 
-  const addLayer = (newLayer: Layer): void => {
-    setLayers((prev) => {
-      return [newLayer, ...prev];
-    });
+  const addLayer = (newLayer: Layer) => {
+    setLayers((prev) => [newLayer, ...prev]);
   };
 
-  const deleteLayer = (index: number): void => {
-    setLayers((prev) => {
-      return [...prev.slice(0, index), ...prev.slice(index + 1)];
-    });
+  const deleteLayer = (index: number) => {
+    setLayers((prev) => [...prev.slice(0, index), ...prev.slice(index + 1)]);
   };
-  const handleClose = () => {
+
+  const handleCloseInstructions = () => {
     setOpenInstructions(false);
   };
 
   return (
     <>
-      {openInstructions && (
-        <>
-          <Instructions />
-          <button onClick={handleClose} className="closeBtn">
-            Close
-          </button>
-        </>
-      )}
+      {openInstructions && <Instructions onClose={handleCloseInstructions} />}
       <h1>Spellbound Sweets</h1>
       <main>
         <div className="Container">

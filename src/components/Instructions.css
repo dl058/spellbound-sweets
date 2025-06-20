@@ -1,61 +1,94 @@
-.Instructions {
+.modal-backdrop {
   position: fixed;
-  top: 10%;
-  right: 10%;
-  left: 10%;
-  bottom: 10%;
-  background-color: #9370db;
-  z-index: 3;
-  border-radius: 25px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 80px;
-}
-h2.instruct {
-  color: white;
-  font-weight: 400;
 }
 
-ul.steps {
-  font-family: "Playwrite PL", cursive;
-  list-style-type: none;
-  font-weight: 500;
-  color: white;
-  font-size: 15px;
-}
-
-button.closeBtn {
+.InstructionsContainer {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
   position: relative;
-  top: 90px;
-  left: 115px;
-  z-index: 4;
-  background-color: darkorchid;
-  padding: 10px 30px 10px 30px;
-  border-radius: 25px;
-  font-size: 15px;
-  font-family: "Playwrite PL", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
 }
 
-@media only screen and (max-width: 480px) {
-  button.closeBtn {
-    position: absolute;
-    top: 155px;
-    left: 65px;
-    padding: 10px;
+.InstructionsOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.InstructionsText {
+  width: 80%;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: blueviolet;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.instruct {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.closeBtn {
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  align-self: center;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .InstructionsContainer {
+    width: 90vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 0.5rem;
   }
-  div.Instructions {
-    display: flex;
-    height: 100vh;
-    position: absolute;
-    top: 130px;
+
+  .InstructionsText {
+    font-size: 0.85rem;
   }
-  ul.steps {
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
+
+  .instruct {
+    font-size: 1rem;
   }
-  h2.instruct {
-    font-size: 45px;
+
+  .steps {
+    font-size: 0.85rem;
+  }
+
+  .closeBtn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
   }
 }

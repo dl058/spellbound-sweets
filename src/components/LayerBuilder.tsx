@@ -1,5 +1,5 @@
+import CakeLayer from "./CakeLayer";
 import { Layer } from "../models/Layer";
-import "./LayerBuilder.css";
 
 interface Props {
   layer: Layer;
@@ -8,14 +8,10 @@ interface Props {
 }
 
 const LayerBuilder = ({ layer, index, deleteLayer }: Props) => {
-  const handleDelete = () => {
-    deleteLayer(index);
-  };
   return (
-    <div className="LayerBuilder">
-      <button className="deleteBtn" onClick={handleDelete}>
-        Delete {layer.flavor}
-      </button>
+    <div className="layer-wrapper">
+      <CakeLayer layer={layer} index={index} />
+      <button onClick={() => deleteLayer(index)}>Remove</button>
     </div>
   );
 };

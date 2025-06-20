@@ -1,7 +1,6 @@
 .cake-builder {
-  background-color: bisque;
-  border-radius: 20px;
-  margin-bottom: 60px;
+  align-items: center;
+  position: relative;
 }
 
 @media only screen and (max-width: 480px) {

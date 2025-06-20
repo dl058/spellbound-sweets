@@ -1,17 +1,22 @@
 .Cake {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  position: relative;
   align-items: center;
-  justify-content: flex-end;
-  background-color: pink;
-  width: 600px;
-  height: 600px;
+  justify-content: flex-start;
   border-radius: 20px;
-  margin-bottom: 60px;
+  margin: 0;
 }
 .Cake .cake-platter {
   width: 24vw;
   z-index: 1;
+}
+
+.cake-platter {
+  width: 280px;
+  margin-top: 0;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 480px) {

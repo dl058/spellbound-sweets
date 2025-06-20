@@ -6,9 +6,10 @@ import { motion } from "framer-motion";
 
 interface Props {
   onAddLayer: (newLayer: Layer) => void;
+  layerCount: number;
 }
 
-const LayerAdd = ({ onAddLayer }: Props) => {
+const LayerAdd = ({ onAddLayer, layerCount }: Props) => {
   const [showForm, setShowForm] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ const LayerAdd = ({ onAddLayer }: Props) => {
           exit={{ scale: 0, opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <LayerForm onAddLayer={onAddLayer} />
+          <LayerForm onAddLayer={onAddLayer} layerCount={layerCount} />
         </motion.div>
       ) : (
         <button className="add-layer" onClick={() => setShowForm(true)}>

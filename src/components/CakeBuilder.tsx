@@ -13,15 +13,8 @@ const CakeBuilder = ({ layers, addLayer, deleteLayer }: Props) => {
   return (
     <div className="cake-builder">
       <h2>Build Your Cake</h2>
-      {layers.map((layer, index) => (
-        <LayerBuilder
-          key={index}
-          index={index}
-          layer={layer}
-          deleteLayer={deleteLayer}
-        />
-      ))}
-      <LayerAdd onAddLayer={addLayer} />
+
+      <LayerAdd onAddLayer={addLayer} layerCount={layers.length} />
     </div>
   );
 };
